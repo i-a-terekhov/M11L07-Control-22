@@ -1,0 +1,46 @@
+<!-- Основное содержание -->
+<div class="content ps-2 pe-2 ps-lg-3 pe-lg-3 ps-xl-5 pe-xl-5 d-flex flex-column">
+    <h1 class="m-2 mb-lg-3 mt-xl-5 ps-1 pb-1">Главная</h1>
+
+    <!-- Фильтр -->
+    <div class="filter-bar m-2 mt-lg-4 mb-5 mb-lg-3 p-1 pt-3 d-flex flex-row flex-wrap gap-2 gap-sm-3" id="filter-bar">
+        <button type="button" class="btn-filter btn me-1 ps-3 pe-3 btn-outline-secondary" id="btn-today">Сегодня</button>
+        <button type="button" class="btn-filter btn me-1 ps-3 pe-3 btn-outline-secondary" id="btn-week">Неделя</button>
+        <button type="button" class="btn-filter btn me-1 ps-3 pe-3 btn-outline-secondary" id="btn-month">Месяц</button>
+        <button type="button" class="btn-filter btn me-1 ps-3 pe-3 btn-outline-secondary" id="btn-year">Год</button>
+        <button type="button" class="btn-filter btn me-1 ps-3 pe-3 btn-outline-secondary" id="btn-all">Все</button>
+        <div class="interval-section d-flex flex-wrap gap-2 gap-sm-3 flex-sm-row">
+            <button type="button" class="btn-filter btn btn-outline-secondary" id="btn-period">Интервал</button>
+            <div class="interval-section d-flex flex-row">
+                <div class="interval d-flex gap-2 align-items-center">
+                    <span>c</span>
+                    <input type="text" class="form-control custom-date" id="interval-from-input"
+                           placeholder="Дата">
+                </div>
+                <div class="interval d-flex gap-2 align-items-center">
+                    <span>по</span>
+                    <input type="text" class="form-control custom-date" id="interval-until-input"
+                           placeholder="Дата">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Область диаграмм -->
+    <div class="canvas-section h-100 mt-md-3 mt-xl-5 p-xxl-5 pt-lg-3 pt-xl-5 d-flex align-items-center flex-wrap">
+
+        <div class="canvas-container mt-xl-4">
+            <h3 class="text-center">Доходы</h3>
+            <canvas class="canvas" id="incomeChart" style="width:420px; height:420px"></canvas>
+        </div>
+
+        <div class="divider divider-line"></div>
+        <div class="divider"></div>
+
+        <div class="canvas-container mt-xl-4">
+            <h3 class="text-center">Расходы</h3>
+            <canvas class="canvas" id="expensesChart" style="width:420px; height:420px"></canvas>
+        </div>
+
+    </div>
+</div>

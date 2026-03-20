@@ -1,0 +1,79 @@
+<div class="d-flex min-vh-100 align-items-center justify-content-center">
+
+    <div class="login-sing-up-container d-flex flex-column p-3">
+
+        <a class="logo-block d-flex flex-column justify-content-center align-items-center mb-4 text-decoration-none"
+           href="/login">
+            <span class="blue-text-part text-primary">Lumincoin</span>
+            <span class="black-text-part">FINANCE</span>
+        </a>
+
+        <div class="form-block mt-5">
+            <h1 class="title text-center mb-3">Создайте аккаунт</h1>
+            <div class="error invalid-feedback text-center mb-3" id="common-error">Не удалось зарегистрировать
+                пользователя. Обратитесь в поддержку.
+            </div>
+            <form class="mt-2">
+                <div class="d-flex flex-column custom-gap-10">
+
+                    <div class="input-group custom-height-38">
+                        <span class="input-group-text">
+                            <svg width="16" height="16">
+                                <use href="icons/layout-icons.svg#user"></use>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                        <span class="error invalid-feedback" id="name-error">Заполните имя</span>
+                    </div>
+
+                    <div class="input-group custom-height-38">
+                        <span class="input-group-text">
+                            <svg width="16" height="16">
+                                <use href="icons/layout-icons.svg#user"></use>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" id="last-name" placeholder="Фамилия">
+                        <span class="error invalid-feedback" id="last-name-error">Заполните фамилию</span>
+                    </div>
+
+                    <div class="input-group custom-height-38">
+                        <span class="input-group-text">
+                            <svg width="16" height="16">
+                                <use href="icons/layout-icons.svg#envelope"></use>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" id="email" placeholder="Электронная почта">
+                        <span class="error invalid-feedback" id="email-error">Введите корректный E-mail</span>
+                    </div>
+
+                    <div class="input-group custom-height-38">
+                        <span class="input-group-text">
+                            <svg width="16" height="16">
+                                <use href="icons/layout-icons.svg#lock"></use>
+                            </svg>
+                        </span>
+                        <input type="password" class="form-control" id="password" placeholder="Пароль">
+                        <span class="error invalid-feedback" id="password-error">Заполните пароль</span>
+                    </div>
+
+                    <div class="input-group custom-height-38">
+                        <span class="input-group-text">
+                            <svg width="16" height="16">
+                                <use href="icons/layout-icons.svg#lock"></use>
+                            </svg>
+                        </span>
+                        <input type="password" class="form-control" id="password-repeat" placeholder="Подтверждение пароля">
+                        <span class="error invalid-feedback" id="password-repeat-error">Пароль и повторение пароля должны совпадать</span>
+                    </div>
+
+                    <button type="button" class="btn btn-primary col-12 mt-2" id="process-button">Войти</button>
+                </div>
+            </form>
+
+            <div class="account-question mb-3 mt-2 text-center">
+                Уже есть аккаунт? <a class="" href="/login">Войдите в систему</a>
+            </div>
+        </div>
+    </div>
+
+</div>

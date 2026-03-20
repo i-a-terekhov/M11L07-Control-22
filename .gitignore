@@ -1,0 +1,23 @@
+#.gitignore
+.idea/
+.git
+#.env
+
+# подключенные пакеты
+/node_modules/
+/backend/node_modules/
+/frontend/node_modules/
+
+# готовые сборки
+/dist/
+/backend/dist/
+/frontend/dist/
+
+# текстовые заметки и таски
+~MEMO.js
+/backend/~MEMO.js/
+/frontend/~MEMO.js/
+~MyTask.js
+
+# коллекция папок для изучения каких-либо моментов
+00_trainee*

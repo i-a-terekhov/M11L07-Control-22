@@ -1,0 +1,605 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../../src/static/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../src/static/fonts/Roboto-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../src/static/fonts/Roboto-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../src/static/fonts/Roboto-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SecretService';
+  src: url('../../src/static/fonts/SecretService-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-roboto: 'Roboto', sans-serif;
+$font-secret-service: 'SecretService', sans-serif;
+$font-inter: 'Inter', sans-serif;
+
+$general-blue: #0D6EFD;
+$dark-blue: #052C65;
+$element-bg-active: #0D6EFD;
+$element-text-active: white;
+$element-bg-hover: #4b8fff;
+$element-text-hover: white;
+
+
+body {
+  font-family: $font-roboto;
+  font-weight: 500;
+
+  .content {
+    h1 {
+      color: $dark-blue;
+    }
+  }
+}
+
+.logo-block {
+  .blue-text-part {
+    font-family: $font-secret-service;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+  }
+
+  .black-text-part {
+    font-family: $font-inter;
+    font-weight: 700;
+    font-size: 12px;
+    color: $dark-blue;
+    letter-spacing: 1.2em;
+    margin-top: -29px;
+    margin-left: 15px;
+  }
+}
+
+.login-sing-up-container {
+  width: 430px;
+
+  .form-block {
+    .title {
+      letter-spacing: 3px;
+      color: $dark-blue;
+    }
+
+    form {
+      .custom-gap-10 {
+        gap: 10px;
+      }
+
+      .custom-height-38 {
+        min-height: 38px;
+      }
+
+      .error {
+        margin-left: 50px;
+      }
+
+      .input-group {
+        input {
+          border-top-right-radius: 0.375rem !important;
+          border-bottom-right-radius: 0.375rem !important;
+        }
+      }
+
+      .form-check {
+        label {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .account-question {
+      font-size: 12px;
+    }
+  }
+}
+
+// #PART ----- статические стили для сайдбара и связанных элементов
+.app-main-container {
+  .sidebar {
+    width: 219px;
+
+    .logo-block {
+      .blue-text-part {
+        font-size: 29px;
+      }
+
+      .black-text-part {
+        font-size: 7px;
+        margin-top: -18px;
+        margin-left: 8px;
+      }
+    }
+
+    .navigation-menu {
+      .nav-item {
+        .nav-link {
+          color: $dark-blue;
+          fill: $dark-blue;
+
+          span {
+            line-height: 24px;
+            letter-spacing: -1px;
+          }
+
+          &.active {
+            background-color: $element-bg-active;
+
+            span {
+              color: $element-text-active;
+            }
+
+            svg {
+              fill: $element-text-active;
+            }
+          }
+        }
+
+        &:not(.dropdown) span {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .balance {
+      .title {
+        font-weight: 500;
+        color: $dark-blue;
+        letter-spacing: -0.5px;
+      }
+
+      .amount {
+        color: $element-bg-active;
+      }
+    }
+
+    .user-block {
+      span {
+        font-size: 14px;
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+// #PART ----- динамические стили для сайдбара и связанных элементов
+.app-main-container {
+  .sidebar {
+    transition: transform .3s ease;
+    @media (max-width: 768px) {
+      transform: translateX(-100%);
+
+      &.open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .content-wrapper {
+    margin-left: 219px;
+    transition: margin-left .3s ease;
+    @media (max-width: 768px) {
+      margin-left: 0 !important;
+      #sidebar-toggle {
+        display: block !important;
+      }
+    }
+
+    .navbar {
+      height: 51px;
+    }
+  }
+}
+
+// #PART ----- динамические стили для раскрывающейся менюшки
+.app-main-container {
+  .sidebar {
+    .navigation-menu {
+      .nav-item {
+        .nav-link:hover {
+          background-color: $element-bg-hover !important;
+          color: $element-text-hover !important;
+          fill: $element-text-hover;
+        }
+      }
+
+      .dropdown {
+        border-color: transparent !important;
+
+        &:hover:not(:has(.open)) {
+          background-color: $element-bg-hover;
+          color: $element-text-hover;
+        }
+
+        &:has(.active) {
+          border-color: $element-bg-active !important;
+        }
+
+        .treeview {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transform: translateY(-10%);
+          transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
+          .nav-item {
+            .nav-link {
+              color: $element-bg-active;
+            }
+          }
+        }
+
+        .treeview.open {
+          max-height: 200px;
+          opacity: 1;
+          transform: translateY(0%);
+          transition: transform 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        &:has(.treeview.open) {
+          border-color: $element-bg-active !important;
+          color: $element-bg-active !important;
+        }
+
+        &:has(.treeview.open) > .nav-link {
+          background-color: $element-bg-active;
+          color: $element-text-active;
+          transition: background-color 0.3s ease;
+          border-bottom-right-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+
+        svg {
+          transition: transform 0.3s ease;
+        }
+
+        &:has(.treeview.open) svg {
+          transform: rotate(100grad);
+          transition: transform 0.3s ease;
+          fill: $element-text-active;
+        }
+      }
+    }
+  }
+}
+
+// #PART ----- стили для дропдауна
+.dropdown-item:hover {
+  background-color: $element-bg-hover !important;
+  color: $element-text-hover !important;
+}
+.dropdown-menu:has(.dropdown-item:hover) {
+  background-color: $element-bg-hover !important;
+}
+
+
+// #PART ----- стили для страницы с диаграммами
+.content {
+  .filter-bar {
+    .btn {
+      min-width: 100px;
+    }
+
+    .interval-section {
+      .interval {
+        span {
+
+        }
+
+        .custom-date {
+          max-width: 78px;
+          height: 26px;
+          padding: 0;
+          font-size: 16px;
+          border: none;
+          background-color: transparent;
+          margin-top: 1px;
+
+          &::placeholder {
+            font-size: 16px;
+            text-decoration: underline;
+            text-align: center;
+            padding-left: 15px;
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  .canvas-section {
+    flex: 1;
+    @media (max-width: 965px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .canvas-container {
+      flex: 1;
+      min-width: 320px;
+      max-width: 435px;
+      @media (max-width: 965px) {
+        min-width: 490px;
+      }
+      @media (max-width: 540px) {
+        min-width: 350px;
+      }
+      @media (max-width: 470px) {
+        min-width: auto;
+        max-width: 300px;
+      }
+      @media (max-width: 350px) {
+        max-width: 270px;
+      }
+
+    }
+
+    .divider {
+      width: 84px;
+      height: 450px;
+      margin-top: 80px;
+      @media (max-width: 1350px) {
+        width: 40px;
+        height: 400px;
+      }
+      @media (max-width: 1200px) {
+        width: 25px;
+        height: 300px;
+      }
+      @media (max-width: 1080px) {
+        width: 15px;
+      }
+      @media (max-width: 965px) {
+        display: none;
+      }
+    }
+
+    .divider-line {
+      border-right: #D9D9D9 1px solid;
+    }
+  }
+}
+
+// #PART ----- Стили для app-create/edit
+
+.manipulate-category-area,
+.manipulate-operation-area {
+  input, select {
+    max-width: 397px;
+    height: 39px;
+  }
+
+  .btn {
+    font-size: 14px;
+    min-width: 83px;
+    padding: 0.475rem 1rem;
+    margin-right: 6px;
+  }
+
+  .btn-success {
+    background-color: #198754;
+
+    &:hover {
+      background-color: #1a704a;
+    }
+  }
+}
+
+// #PART ----- Стили для app-expenses / app-incomes
+.categories-cards-area {
+  column-gap: 1.35rem;
+  row-gap: 1.5rem;
+
+  .category-card {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+
+    .header {
+      .title {
+        font-size: 28px;
+        letter-spacing: 0;
+      }
+    }
+
+    .footer {
+      .btn {
+        padding: 6px 9px;
+        margin-left: 3px;
+        margin-right: 2px;
+        min-width: 88px;
+        letter-spacing: 0.25px;
+      }
+    }
+  }
+
+  .blank-card {
+    height: 120px;
+
+    .btn {
+      height: 100%;
+    }
+  }
+}
+
+// #PART ----- Стили для модального окна в app-expenses / app-incomes
+.modal.fade {
+  .modal-dialog {
+    max-width: 530px;
+    max-height: 161px;
+    margin: 42vh auto;
+
+    .modal-content {
+      border-radius: 15px;
+
+      .modal-header {
+        border: none;
+
+        .modal-title {
+          font-size: 20px;
+          line-height: 26px;
+          letter-spacing: 0.25px;
+        }
+      }
+
+      .modal-footer {
+        justify-content: center;
+        border: none;
+
+        .btn {
+          font-size: 14px;
+          min-width: 111px;
+          padding: 0.375rem 1rem;
+        }
+
+        .btn.btn-success {
+          background-color: #198754;
+
+          &:hover {
+            background-color: #1a704a;
+          }
+        }
+      }
+    }
+  }
+}
+
+// #PART ----- Стили для main-tables
+.make-income-expenses-buttons {
+  .btn {
+    font-size: 14px;
+    min-width: 132px;
+    padding: 0.45rem 0.85rem;
+    letter-spacing: 0.25px;
+  }
+
+  .btn.btn-success {
+    background-color: #198754;
+
+    &:hover {
+      background-color: #1a704a;
+    }
+  }
+}
+
+.table-area {
+  .table-bordered td, .table-bordered th {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 12px;
+    font-size: 16px;
+    letter-spacing: 1.33px;
+    @media (max-width: 1400px) {
+      padding: 12px 6px;
+      &.long-description {
+        font-size: 12px;
+        letter-spacing: 0;
+      }
+    }
+
+    &:last-child {
+      padding: 11px 0 6px 0;
+    }
+
+    .line-actions {
+      margin-top: -4px;
+
+      .btn-sm {
+        padding: 3px;
+      }
+    }
+  }
+}
+
+// #PART ----- Стили для 404
+#text404 {
+  animation: groudingText 7.5s linear infinite;
+}
+
+@keyframes groudingText {
+  from {
+    font-size: 0;
+    transform: translate(150%, -100%);
+    opacity: 0;
+  }
+  to {
+    font-size: 500px;
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+#rocket-video {
+  animation: rotateCircle 7.5s linear infinite, changeHeight 7.5s linear infinite;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+    height: 240px;
+  }
+  95% {
+    transform: rotate(-130deg);
+    height: 480px;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes changeHeight {
+  0% { height: 350px; }
+  50% { height: 450px; }
+  75% { height: 400px; }
+  100% { height: 450px; }
+}

@@ -1,0 +1,50 @@
+<div class="d-flex min-vh-100 align-items-center justify-content-center">
+
+    <div class="login-sing-up-container d-flex flex-column p-3">
+
+        <a class="logo-block d-flex flex-column justify-content-center align-items-center mb-4 text-decoration-none"
+           href="/signup">
+            <span class="blue-text-part text-primary">Lumincoin</span>
+            <span class="black-text-part">FINANCE</span>
+        </a>
+
+        <div class="form-block mt-4">
+            <h1 class="title text-center mb-4 mt-3">Вход</h1>
+            <div id="common-error" class="error invalid-feedback text-center mb-3">Неправильный email или пароль</div>
+            <form class="mt-2">
+                <div class="d-flex flex-column custom-gap-10">
+
+                    <div class="input-group custom-height-38">
+                    <span class="input-group-text">
+                        <svg width="16" height="16"><use href="icons/layout-icons.svg#envelope"></use></svg>
+                    </span>
+                        <input type="text" class="form-control" id="email" placeholder="Электронная почта">
+                        <span class="error invalid-feedback" id="email-error">Введите корректный E-mail</span>
+                    </div>
+
+                    <div class="input-group custom-height-38">
+                    <span class="input-group-text">
+                        <svg width="16" height="16"><use href="icons/layout-icons.svg#lock"></use></svg>
+                    </span>
+                        <input type="password" class="form-control" id="password" placeholder="Пароль">
+                        <span class="error invalid-feedback" id="password-error">Введите корректный пароль</span>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" value="" id="remember-me-checkbox">
+                        <label class="form-check-label" for="remember-me-checkbox">
+                            Запомнить меня
+                        </label>
+                    </div>
+
+                    <button type="button" class="btn btn-primary col-12 mt-2" id="process-button">Войти</button>
+                </div>
+            </form>
+
+            <div class="account-question mb-3 mt-2">
+                Еще нет аккаунта? <a class="" href="/signup">Пройдите регистрацию</a>
+            </div>
+        </div>
+    </div>
+
+</div>

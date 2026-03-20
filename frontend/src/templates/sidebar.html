@@ -1,0 +1,109 @@
+<div class="app-main-container">
+
+    <!-- #PART ----- Сайдбар -->
+    <aside class="sidebar position-fixed top-0 start-0 vh-100 pt-4 pb-4 bg-white d-flex flex-column align-content-between border-end z-2"
+           id="sidebar">
+        <a class="logo-block mt-3 me-3 mb-2 d-flex flex-column justify-content-center align-items-center text-decoration-none"
+           href="#">
+            <span class="blue-text-part text-primary">Lumincoin</span>
+            <span class="black-text-part">FINANCE</span>
+        </a>
+        <hr>
+        <ul class="navigation-menu flex-column mt-3 mb-auto p-3 pt-4 list-unstyled">
+
+            <!-- Главная -->
+            <li class="nav-item ms-1 me-1 mt-1">
+                <a class="nav-link p-2 ps-3 rounded-2" href="/">
+                    <svg class="mb-1" width="16" height="16">
+                        <use href="icons/layout-icons.svg#home"></use>
+                    </svg>
+                    <span class="ml-3">Главная</span>
+                </a>
+            </li>
+
+            <!-- Доходы и расходы -->
+            <li class="nav-item ms-1 me-1">
+                <a class="nav-link p-2 ps-3 rounded-2" href="/operations-main-tables">
+                    <svg width="16" height="16">
+                        <use href="icons/layout-icons.svg#money"></use>
+                    </svg>
+                    <span class="ml-3">Доходы & Расходы</span>
+                </a>
+            </li>
+
+            <!-- Категории -->
+            <li class="nav-item dropdown rounded-2 ms-1 me-1 border border-1" id="dropdown">
+                <button class="nav-link w-100 p-2 ps-3 pe-3 rounded-1 d-block d-flex align-items-center justify-content-between">
+                    <span class="ml-3">Категории</span>
+                    <svg style="margin-right: 2px" width="7" height="13">
+                        <use href="icons/layout-icons.svg#chevron"></use>
+                    </svg>
+                </button>
+
+
+                <ul class="treeview flex-column list-unstyled" id="treeview">
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="/categories?category=income">
+                            <span class="ps-1">Доходы</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 rounded-bottom-1" href="/categories?category=expense">
+                            <span class="ps-1">Расходы</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Баланс -->
+        <div class="balance ms-3 me-3 ps-1">
+            <span class="title">Баланс: </span>
+            <span class="amount" id="user-balance"></span>
+        </div>
+        <hr>
+
+        <!-- Юзер и дропдаун для выхода dropdown-toggle-->
+        <div class="user-block dropdown mb-2 ms-1 p-1 pb-2 ps-3">
+            <button class="d-flex align-items-center text-decoration-none border-0 bg-transparent"
+                    role="button"
+                    data-bs-toggle="dropdown" data-bs-offset="60,0" aria-expanded="false"
+            >
+                <svg width="36" height="36">
+                    <use href="icons/layout-icons.svg#user-icon"></use>
+                </svg>
+                <span class="ms-3" id="profile-name"></span>
+            </button>
+
+            <ul class="dropdown-menu shadow">
+                <li>
+                    <a type="button" class="dropdown-item" href="/logout">
+                        Log out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="overlay z-1" id="overlay"></div>
+
+    <!-- #PART ----- Всё, что справа от сайдбара (кнопка сайдбара и основной контент) -->
+    <div class="content-wrapper">
+        <!-- #PART            \----- Возможное меню с кнопками (домик для бургера)  -->
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <!-- Кнопка бургера -->
+                <li class="nav-item">
+                    <button class="btn d-none" id="sidebar-toggle">
+                        <svg width="16" height="16">
+                            <use href="icons/layout-icons.svg#burger"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- #PART            \----- Основной контент (через вставку template) -->
+        <div id="content-layout"></div>
+
+    </div>
+</div>
