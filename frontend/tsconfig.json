@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",                   // Папка, в которую компилятор будет складывать сгенерированные JS-файлы
+    "module": "commonjs",                 // Используемая система модулей (подходит для Node.js)
+    "target": "es2015",                   // В какую версию JavaScript компилировать код
+    "sourceMap": true,                    // Генерировать .map файлы для удобной отладки
+    "declaration": true,                  // Генерировать .d.ts файлы с типами
+    "declarationMap": true,               // Создавать map-файлы для деклараций (удобно для библиотек)
+    "noUncheckedIndexedAccess": true,     // Добавляет undefined к типам при доступе по индексу
+    "exactOptionalPropertyTypes": true,   // Делает опциональные свойства строго optional, без неявного undefined
+    "strict": true,                       // Включает все строгие проверки типов
+    "jsx": "react-jsx",                   // Режим обработки JSX (для React 17+ без явного импорта React)
+    "verbatimModuleSyntax": false,        // Позволяет TS трансформировать импорты/экспорты при компиляции
+    "isolatedModules": true,              // Проверяет, что каждый файл можно компилировать независимо
+    "noUncheckedSideEffectImports": true, // Проверяет импорты, которые могут иметь побочные эффекты
+    "moduleDetection": "force",           // Принудительно считать все файлы модулями
+    "skipLibCheck": true                  // Пропускает проверку типов в node_modules для ускорения сборки
+  },
+  "include": ["src"],                     // Указывает, какие файлы включать в компиляцию
+  "exclude": ["node_modules", "dist"]     // Указывает, какие файлы и папки исключить
+}
+

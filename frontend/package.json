@@ -20,6 +20,8 @@
     "sass": "^1.93.2",
     "sass-loader": "^16.0.6",
     "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
     "webpack": "^5.105.4",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.15.2"
@@ -27,7 +29,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.1",
-    "flatpickr": "^4.6.13",
-    "dotenv-webpack": "^8.1.1"
+    "dotenv-webpack": "^8.1.1",
+    "flatpickr": "^4.6.13"
   }
 }
