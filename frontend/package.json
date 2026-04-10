@@ -27,6 +27,8 @@
     "webpack-dev-server": "^4.15.2"
   },
   "dependencies": {
+    "-": "^0.0.1",
+    "@types/bootstrap": "^5.2.10",
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.1",
     "dotenv-webpack": "^8.1.1",
